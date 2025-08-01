@@ -5,9 +5,9 @@
 **이메일:** hay6586@gmail.com  
 **GitHub:** https://github.com/hanayoung
 
-**과제 소요시간:** 총 13시간
+**과제 소요시간:** 총 14시간
 - 기능 구현: 7시간
-- 문서 작성 및 발표 준비: 6시간
+- 문서 작성 및 발표 준비: 7시간
 
 ---
 ## 구현한 코드의 간단한 설명
@@ -33,8 +33,8 @@ ColorFilter의 하위 클래스인 **ColorMatrixColorFilter**와 **ColorMatrix**
 
 
 ### 설계 구조
-- **Data Binding 활용**: `@BindingAdapter`를 사용하여 ViewModel의 상태 변화를 자동으로 UI에 반영
-- **Sealed Class 선택**: `enum` 대신 `sealed class`를 사용하여 확장성 및 런타임 성능 고려
+- **DataBinding 활용**: `@BindingAdapter`를 사용하여 ViewModel의 상태 변화를 자동으로 UI에 반영
+- **sealed class 선택**: `enum` 대신 `sealed class`를 사용하여 확장성 및 런타임 성능 고려
 
 ## 어려웠던 점과 질문 사항
 
@@ -63,7 +63,7 @@ ColorFilter의 하위 클래스인 **ColorMatrixColorFilter**와 **ColorMatrix**
 
 ### 질문 사항
 - **실제 필터 앱의 아키텍처**:    
-  실제 상용 필터 앱에서는 필터 기능을 어떤 구조로 처리하는지 궁금합니다. 일반적으로 사용하는 아키텍처나 패턴이 있다면 알고 싶습니다.
+  실제 상용 필터 앱에서는 필터 기능을 어떤 구조로 처리하는지 궁금합니다. 일반적으로 사용하는 패턴이나 구조가 있다면 알고 싶습니다.
 - **필터 분류 전략**:   
   실무에서는 밝기 증감과 같이 동적으로 단계가 정해지는 필터와 단계가 하나로 이루어진 필터를 실제로 나누어 처리하는지 궁금합니다. 그렇다면 어떤 기준으로 분류하는지도 알고 싶습니다.
 - **밝기 조절 기준**:   
@@ -84,10 +84,10 @@ ColorMatrix의 `setSaturation(0f)`을 통해서 이미지 흑백처리를 하였
 수백 개의 필터를 서버에서 다운로드하는 앱으로 확장할 때 고려해야 할 점
 
 ### 1. 필터 데이터 구조 설계
-현재는 임의로 필요할 거라고 예측한 데이터로 구조를 설계했으나, 공통된 구조로 필터 정보를 주고받을 수 있도록 데이터 구조 정의 필요
+현재는 임의로 필요할 거라고 예측한 데이터로 구조를 설계했으나, 공통된 구조로 필터 정보를 주고받을 수 있도록 데이터 구조 정의가 필요합니다.
 
 ### 2. 필터 로딩 성능 최적화
-초기 앱 실행 시 모든 필터를 한 번에 불러오지 않고, 페이지네이션 또는 필터 카테고리 별 로딩 등으로 트래픽을 최소화하여 필터 로딩 성능 최적화
+초기 앱 실행 시 모든 필터를 한 번에 불러오지 않고, 페이지네이션 또는 필터 카테고리 별 로딩 등으로 트래픽을 최소화하여 필터 로딩 성능 최적화가 필요합니다.
 
 ### 3. 사용자 경험 개선
 - **카테고리화**: 필터를 한 번에 다 보여주기만 하는 것이 아니라, 전체보기에 추가적으로 용도별(인물, 풍경, 빈티지 등)로 분류하여 제공
@@ -101,7 +101,7 @@ ColorMatrix의 `setSaturation(0f)`을 통해서 이미지 흑백처리를 하였
 - 기본 화면
   ![](https://velog.velcdn.com/images/aoreo0017/post/77e50b9e-03de-4069-82b6-b7fdab47afb2/image.png)
 
-![](https://velog.velcdn.com/images/aoreo0017/post/104bf6d2-cec1-4589-b79b-eb2fe5de45d9/image.png)
+  ![](https://velog.velcdn.com/images/aoreo0017/post/104bf6d2-cec1-4589-b79b-eb2fe5de45d9/image.png)
 
 - 흑백 필터 적용 화면
   ![](https://velog.velcdn.com/images/aoreo0017/post/ce0c8949-473a-41a3-907e-3d3126db5aab/image.png)
