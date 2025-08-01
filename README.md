@@ -34,7 +34,7 @@ ColorFilter의 하위 클래스인 **ColorMatrixColorFilter**와 **ColorMatrix**
 
 ### 설계 구조
 - **DataBinding 활용**: `@BindingAdapter`를 사용하여 ViewModel의 상태 변화를 자동으로 UI에 반영
-- **sealed class 선택**: `enum` 대신 `sealed class`를 사용하여 확장성 및 런타임 성능 고려
+- **sealed class 선택**: `enum` 대신 `sealed class`를 사용하여 확장성 고려
 
 ## 어려웠던 점과 질문 사항
 
